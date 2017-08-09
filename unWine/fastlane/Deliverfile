@@ -1,0 +1,33 @@
+#notes = [
+#  "* New way to invite friends",
+#  "* Improved performance & fixed bugs\n",
+#  "Do you have feedback or a feature request? Let us know by sending us a message to feedback@unWine.me"
+#].join("\n") + "\n"
+
+#release_notes({'default' => notes, 'en-US' => notes })
+
+# 1
+price_tier 0
+# 2
+#app_review_information(
+#  first_name: "Fabio",
+#  last_name: "Gomez",
+#  phone_number: "+1 (210) 584-8845",
+#  email_address: "lionapps@live.com",
+#  demo_user: "apple.test",
+#  demo_password: "qazplm123",
+#  notes: "N/A"
+#)
+# 3
+submission_information({    
+    export_compliance_encryption_updated: false,
+    export_compliance_uses_encryption: false,
+    content_rights_contains_third_party_content: false,
+    add_id_info_uses_idfa: false
+})
+# 4
+automatic_release true
+# 5
+app_icon './fastlane/metadata/app_icon.jpg'
+# 6
+app_rating_config_path "./fastlane/metadata/itunes_rating_config.json"

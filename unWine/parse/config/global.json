@@ -1,0 +1,24 @@
+{
+    "applications": {
+        "_default": {
+            "link": "unWine Beta"
+        }, 
+        "unWine Beta": {
+            "applicationId": "atPw27IbtqD4EdHRhRSJsPpXxvXIeWEBAnc8EWjs", 
+            "masterKey": "V7LTiFZyWfwLj3boPva9YKYDaVXYhJLKcbfhHpCe"
+        }, 
+        "unWine": {
+            "applicationId": "wa6ntcTk5msrS1u6sNb009m2iEqM8ETcjgANoktj", 
+            "masterKey": "qYDVjg9fWgKQkBgukCXJMUcpQQpLqcFUfg1GuMB0"
+        }, 
+        "development": {
+            "link": "unWine Beta"
+        }, 
+        "production": {
+            "link": "unWine"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.15"
+    }
+}

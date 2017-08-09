@@ -1,0 +1,3 @@
+git_url "git@bitbucket.org:lionmobile/lion-match.git"
+
+#type "appstore" # The default type, can be: appstore, adhoc, enterprise or development

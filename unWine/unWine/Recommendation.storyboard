@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7Vi-D4-0UX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--RecommendationVC Swift-->
+        <scene sceneID="rHl-PV-wLt">
+            <objects>
+                <viewController id="7Vi-D4-0UX" customClass="RecommendationVCSwift" customModule="unWine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3I7-Rb-VzB"/>
+                        <viewControllerLayoutGuide type="bottom" id="rYW-4Z-SAe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vdr-YM-Tzc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdl-vE-rAQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOE-vr-fii">
+                                        <rect key="frame" x="152" y="10" width="72" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1E-0J-RIz">
+                                        <rect key="frame" x="338" y="9" width="21" height="22"/>
+                                        <state key="normal" image="ic_undo">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoButtonTapped" destination="7Vi-D4-0UX" eventType="touchUpInside" id="6Z0-vc-pAS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrp-M8-lny">
+                                        <rect key="frame" x="16" y="5" width="119" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hZs-iJ-VSW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Restore">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restorePurchase:" destination="7Vi-D4-0UX" eventType="touchUpInside" id="5zu-DF-ota"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75050950049999998" green="0.17824108899999999" blue="0.21366685630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="UOE-vr-fii" firstAttribute="centerX" secondItem="hdl-vE-rAQ" secondAttribute="centerX" id="9mv-iF-NXR"/>
+                                    <constraint firstAttribute="height" constant="40" id="HgB-HR-9b5"/>
+                                    <constraint firstItem="Wrp-M8-lny" firstAttribute="leading" secondItem="hdl-vE-rAQ" secondAttribute="leading" constant="16" id="Hoa-p5-m4u"/>
+                                    <constraint firstAttribute="trailing" secondItem="a1E-0J-RIz" secondAttribute="trailing" constant="16" id="Yui-dT-So1"/>
+                                    <constraint firstItem="UOE-vr-fii" firstAttribute="centerY" secondItem="hdl-vE-rAQ" secondAttribute="centerY" id="ga2-y3-JJM"/>
+                                    <constraint firstItem="Wrp-M8-lny" firstAttribute="centerY" secondItem="hdl-vE-rAQ" secondAttribute="centerY" id="wi3-OL-Fau"/>
+                                    <constraint firstItem="UOE-vr-fii" firstAttribute="leading" secondItem="Wrp-M8-lny" secondAttribute="trailing" constant="17" id="x08-Fo-zA9"/>
+                                    <constraint firstItem="a1E-0J-RIz" firstAttribute="centerY" secondItem="hdl-vE-rAQ" secondAttribute="centerY" id="ydV-Wr-FXf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-UM-1mx" customClass="CustomKolodaView" customModule="unWine" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="375" height="528"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tj2-T3-Zco">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBh-l2-2X4">
+                                        <rect key="frame" x="77.5" y="20" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="AFT-ow-cwP"/>
+                                            <constraint firstAttribute="height" constant="40" id="IM3-Dv-j0f"/>
+                                        </constraints>
+                                        <state key="normal" image="cancel.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="leftButtonTapped" destination="7Vi-D4-0UX" eventType="touchUpInside" id="wtr-EG-qGj"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bj3-yE-sHn">
+                                        <rect key="frame" x="167.5" y="20" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="BkV-8r-eM1"/>
+                                            <constraint firstAttribute="width" constant="40" id="sBd-3l-aMQ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE5-fy-l3e">
+                                        <rect key="frame" x="257.5" y="20" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="3Jc-vZ-WK5"/>
+                                            <constraint firstAttribute="width" constant="40" id="bJq-e1-pjX"/>
+                                        </constraints>
+                                        <state key="normal" image="ok.png">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rightButtonTapped" destination="7Vi-D4-0UX" eventType="touchUpInside" id="TEX-yB-xbD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hE5-fy-l3e" firstAttribute="leading" secondItem="Bj3-yE-sHn" secondAttribute="trailing" constant="50" id="5g8-ut-xlb"/>
+                                    <constraint firstItem="nBh-l2-2X4" firstAttribute="centerY" secondItem="Tj2-T3-Zco" secondAttribute="centerY" id="Hcd-If-CvS"/>
+                                    <constraint firstItem="Bj3-yE-sHn" firstAttribute="leading" secondItem="nBh-l2-2X4" secondAttribute="trailing" constant="50" id="bdV-GX-9Al"/>
+                                    <constraint firstAttribute="height" constant="80" id="dIY-Qp-G0P"/>
+                                    <constraint firstItem="Bj3-yE-sHn" firstAttribute="centerY" secondItem="Tj2-T3-Zco" secondAttribute="centerY" id="mha-8G-jkb"/>
+                                    <constraint firstItem="hE5-fy-l3e" firstAttribute="centerY" secondItem="Tj2-T3-Zco" secondAttribute="centerY" id="nkh-aK-lHK"/>
+                                    <constraint firstItem="Bj3-yE-sHn" firstAttribute="centerX" secondItem="Tj2-T3-Zco" secondAttribute="centerX" id="vgY-hw-Wr5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hdl-vE-rAQ" secondAttribute="trailing" id="333-JQ-5cX"/>
+                            <constraint firstItem="Tj2-T3-Zco" firstAttribute="trailing" secondItem="aRI-UM-1mx" secondAttribute="trailing" id="65m-ju-7WI"/>
+                            <constraint firstItem="hdl-vE-rAQ" firstAttribute="leading" secondItem="Vdr-YM-Tzc" secondAttribute="leading" id="93r-Eb-nwx"/>
+                            <constraint firstItem="Tj2-T3-Zco" firstAttribute="leading" secondItem="aRI-UM-1mx" secondAttribute="leading" id="CiS-J7-rru"/>
+                            <constraint firstItem="aRI-UM-1mx" firstAttribute="leading" secondItem="Vdr-YM-Tzc" secondAttribute="leading" id="LVB-Kk-tVQ"/>
+                            <constraint firstItem="Tj2-T3-Zco" firstAttribute="top" secondItem="aRI-UM-1mx" secondAttribute="bottom" id="Xxd-LG-Cjj"/>
+                            <constraint firstItem="hdl-vE-rAQ" firstAttribute="top" secondItem="3I7-Rb-VzB" secondAttribute="bottom" id="aAJ-Ay-Ic5"/>
+                            <constraint firstItem="Tj2-T3-Zco" firstAttribute="bottom" secondItem="rYW-4Z-SAe" secondAttribute="top" id="biS-gO-J2N"/>
+                            <constraint firstItem="aRI-UM-1mx" firstAttribute="top" secondItem="3I7-Rb-VzB" secondAttribute="bottom" constant="39" id="y7q-wn-joc"/>
+                            <constraint firstAttribute="trailing" secondItem="aRI-UM-1mx" secondAttribute="trailing" id="yjh-4T-Mcm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="OKButton" destination="hE5-fy-l3e" id="9ad-2b-rqy"/>
+                        <outlet property="cancelButton" destination="nBh-l2-2X4" id="sNQ-Sf-c1W"/>
+                        <outlet property="kolodaView" destination="aRI-UM-1mx" id="xFT-oo-RGr"/>
+                        <outlet property="restorePurchaseButton" destination="Wrp-M8-lny" id="26y-2T-Hyd"/>
+                        <outlet property="topBar" destination="hdl-vE-rAQ" id="rdB-oj-FJh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4x-oA-7nr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423.1884057971015" y="797.28260869565224"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cancel.png" width="40" height="40"/>
+        <image name="ic_undo" width="21" height="21"/>
+        <image name="ok.png" width="40" height="40"/>
+    </resources>
+</document>

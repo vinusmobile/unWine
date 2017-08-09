@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8VF-gV-3HE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Or Sign Up View Controller-->
+        <scene sceneID="Dg9-Ux-4uE">
+            <objects>
+                <viewController storyboardIdentifier="LoSU" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GnC-aG-4JW" customClass="loginOrSignUpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kLT-pm-pIC"/>
+                        <viewControllerLayoutGuide type="bottom" id="JCq-oJ-OcC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Nk-OW-K9g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1s-4m-Eog">
+                                <rect key="frame" x="20" y="59" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="G1s-4m-Eog" id="MQJ-wH-Xsc"/>
+                        <segue destination="KDQ-Pf-Ohu" kind="presentation" identifier="toMain" animates="NO" id="s4v-W3-e11"/>
+                        <segue destination="0g7-cF-LP2" kind="presentation" identifier="toProfile" id="4ca-3L-6kz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1o-nY-l5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1334" y="166"/>
+        </scene>
+        <!--Main Log In View Controller-->
+        <scene sceneID="FFU-zO-ypu">
+            <objects>
+                <viewController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qrz-7Z-UYe" customClass="MainLogInViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wOa-Wc-p9r"/>
+                        <viewControllerLayoutGuide type="bottom" id="x9w-Np-mBJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TNx-6l-TW8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="2" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8SY-jy-az4" customClass="LoginGenericButtonView">
+                                <rect key="frame" x="478" y="538" width="106" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbj-fc-GRH">
+                                        <rect key="frame" x="22" y="10" width="62" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.70755964517593384" green="0.43468713760375977" blue="0.43929898738861084" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="QiM-qh-0Yx"/>
+                                    <constraint firstAttribute="width" constant="106" id="fPI-81-ptg"/>
+                                    <constraint firstAttribute="centerX" secondItem="Jbj-fc-GRH" secondAttribute="centerX" id="kQe-a4-acb"/>
+                                    <constraint firstAttribute="centerY" secondItem="Jbj-fc-GRH" secondAttribute="centerY" id="lYP-9Z-a0o"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="titleLabel" destination="Jbj-fc-GRH" id="7RZ-t4-8a4"/>
+                                </connections>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tw9-Ev-gb9">
+                                <rect key="frame" x="135" y="80" width="330" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="sq3-dF-2sf"/>
+                                    <constraint firstAttribute="width" constant="330" id="xkn-uM-r1p"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pwp-0O-4oh" customClass="LoginGenericButtonView">
+                                <rect key="frame" x="20" y="429" width="568" height="51"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h8Y-TC-1EP">
+                                        <rect key="frame" x="8" y="8" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="eat-b9-cbF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9I-qd-tIR">
+                                        <rect key="frame" x="57" y="8" width="503" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.70755964517593384" green="0.43468713760375977" blue="0.43929898738861084" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="h8Y-TC-1EP" firstAttribute="top" secondItem="pwp-0O-4oh" secondAttribute="top" constant="8" id="1tu-DZ-50Q"/>
+                                    <constraint firstAttribute="centerY" secondItem="e9I-qd-tIR" secondAttribute="centerY" id="D5z-Aq-8A8"/>
+                                    <constraint firstItem="h8Y-TC-1EP" firstAttribute="top" secondItem="pwp-0O-4oh" secondAttribute="top" constant="8" id="EhO-aJ-Oyy"/>
+                                    <constraint firstAttribute="height" constant="51" id="Fch-JA-BgO"/>
+                                    <constraint firstItem="h8Y-TC-1EP" firstAttribute="bottom" secondItem="pwp-0O-4oh" secondAttribute="bottomMargin" id="Li5-ZV-Kka"/>
+                                    <constraint firstItem="h8Y-TC-1EP" firstAttribute="centerY" secondItem="pwp-0O-4oh" secondAttribute="centerY" id="SQW-WR-QS6"/>
+                                    <constraint firstItem="e9I-qd-tIR" firstAttribute="leading" secondItem="h8Y-TC-1EP" secondAttribute="trailing" constant="14" id="Yoe-Kf-C81"/>
+                                    <constraint firstAttribute="trailing" secondItem="e9I-qd-tIR" secondAttribute="trailing" constant="8" id="bwB-I4-biD"/>
+                                    <constraint firstItem="e9I-qd-tIR" firstAttribute="top" secondItem="pwp-0O-4oh" secondAttribute="top" constant="8" id="iNk-Ct-5Ml"/>
+                                    <constraint firstAttribute="bottom" secondItem="e9I-qd-tIR" secondAttribute="bottom" constant="8" id="nRr-bL-1dY"/>
+                                    <constraint firstAttribute="bottom" secondItem="h8Y-TC-1EP" secondAttribute="bottom" constant="8" id="nos-wF-ymE"/>
+                                    <constraint firstItem="h8Y-TC-1EP" firstAttribute="leading" secondItem="pwp-0O-4oh" secondAttribute="leadingMargin" id="nsV-u7-miW"/>
+                                    <constraint firstItem="h8Y-TC-1EP" firstAttribute="top" secondItem="pwp-0O-4oh" secondAttribute="top" constant="8" id="qMx-Mk-xXe"/>
+                                    <constraint firstItem="h8Y-TC-1EP" firstAttribute="top" secondItem="pwp-0O-4oh" secondAttribute="topMargin" id="vcB-VZ-sq2"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="iconView" destination="h8Y-TC-1EP" id="ybb-Ck-dQa"/>
+                                    <outlet property="titleLabel" destination="e9I-qd-tIR" id="Sj0-Ml-ug1"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0a-SH-zEJ" customClass="LoginGenericButtonView">
+                                <rect key="frame" x="20" y="359" width="568" height="51"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ju7-aF-pir">
+                                        <rect key="frame" x="8" y="8" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="Qpx-FY-19p"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Log in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHb-Bx-w9H">
+                                        <rect key="frame" x="57" y="8" width="503" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.70755964517593384" green="0.43468713760375977" blue="0.43929898738861084" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstItem="mHb-Bx-w9H" firstAttribute="leading" secondItem="ju7-aF-pir" secondAttribute="trailing" constant="14" id="7ot-4g-1pj"/>
+                                    <constraint firstItem="mHb-Bx-w9H" firstAttribute="top" secondItem="F0a-SH-zEJ" secondAttribute="top" constant="8" id="8ah-mP-zri"/>
+                                    <constraint firstItem="ju7-aF-pir" firstAttribute="bottom" secondItem="F0a-SH-zEJ" secondAttribute="bottomMargin" id="BGT-de-i0i"/>
+                                    <constraint firstItem="ju7-aF-pir" firstAttribute="top" secondItem="F0a-SH-zEJ" secondAttribute="top" constant="8" id="Hbe-uF-Dw8"/>
+                                    <constraint firstItem="ju7-aF-pir" firstAttribute="top" secondItem="F0a-SH-zEJ" secondAttribute="topMargin" id="NPW-QQ-78f"/>
+                                    <constraint firstItem="ju7-aF-pir" firstAttribute="leading" secondItem="F0a-SH-zEJ" secondAttribute="leadingMargin" id="W2f-o5-QdB"/>
+                                    <constraint firstItem="ju7-aF-pir" firstAttribute="centerY" secondItem="F0a-SH-zEJ" secondAttribute="centerY" id="Xj0-ZC-Vyb"/>
+                                    <constraint firstItem="ju7-aF-pir" firstAttribute="top" secondItem="F0a-SH-zEJ" secondAttribute="top" constant="8" id="bV3-mf-ePb"/>
+                                    <constraint firstAttribute="centerY" secondItem="mHb-Bx-w9H" secondAttribute="centerY" id="eEt-dc-bhg"/>
+                                    <constraint firstAttribute="bottom" secondItem="mHb-Bx-w9H" secondAttribute="bottom" constant="8" id="fjQ-4d-e6d"/>
+                                    <constraint firstItem="ju7-aF-pir" firstAttribute="top" secondItem="F0a-SH-zEJ" secondAttribute="top" constant="8" id="gMo-xz-2wS"/>
+                                    <constraint firstAttribute="bottom" secondItem="ju7-aF-pir" secondAttribute="bottom" constant="8" id="sah-6E-ogU"/>
+                                    <constraint firstAttribute="trailing" secondItem="mHb-Bx-w9H" secondAttribute="trailing" constant="8" id="v8c-6j-0mt"/>
+                                    <constraint firstAttribute="height" constant="51" id="xOv-qM-BYu"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="iconView" destination="ju7-aF-pir" id="7Wj-vh-5vP"/>
+                                    <outlet property="titleLabel" destination="mHb-Bx-w9H" id="KfW-nk-ctC"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkE-W0-Ifr">
+                                <rect key="frame" x="20" y="544" width="126" height="30"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPassword:" destination="qrz-7Z-UYe" eventType="touchUpInside" id="foV-A6-gCH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQW-zi-44F">
+                                <rect key="frame" x="200" y="434" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Continue as guest">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="guestMode:" destination="qrz-7Z-UYe" eventType="touchUpInside" id="E0V-I4-CdI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nQW-zi-44F" secondAttribute="centerX" id="6Uw-33-0iZ"/>
+                            <constraint firstAttribute="centerX" secondItem="pwp-0O-4oh" secondAttribute="centerX" id="F8B-g5-uyq"/>
+                            <constraint firstItem="x9w-Np-mBJ" firstAttribute="top" secondItem="lkE-W0-Ifr" secondAttribute="bottom" constant="26" id="Kbt-Rg-jLL"/>
+                            <constraint firstItem="8SY-jy-az4" firstAttribute="trailing" secondItem="TNx-6l-TW8" secondAttribute="trailingMargin" id="KzA-ik-LTB"/>
+                            <constraint firstItem="x9w-Np-mBJ" firstAttribute="top" secondItem="8SY-jy-az4" secondAttribute="bottom" constant="20" id="LJe-nY-WrN"/>
+                            <constraint firstItem="tw9-Ev-gb9" firstAttribute="top" secondItem="wOa-Wc-p9r" secondAttribute="bottom" constant="50" id="abT-xC-EV2"/>
+                            <constraint firstItem="lkE-W0-Ifr" firstAttribute="leading" secondItem="TNx-6l-TW8" secondAttribute="leadingMargin" id="eR1-Rv-x46"/>
+                            <constraint firstItem="nQW-zi-44F" firstAttribute="top" secondItem="pwp-0O-4oh" secondAttribute="bottom" constant="16" id="h1O-tK-L4j"/>
+                            <constraint firstAttribute="centerX" secondItem="tw9-Ev-gb9" secondAttribute="centerX" id="i0l-dF-lSV"/>
+                            <constraint firstItem="tw9-Ev-gb9" firstAttribute="centerY" secondItem="TNx-6l-TW8" secondAttribute="centerY" constant="-128" id="iR9-pI-iXp"/>
+                            <constraint firstItem="pwp-0O-4oh" firstAttribute="top" secondItem="F0a-SH-zEJ" secondAttribute="bottom" constant="19" id="nmc-8d-bKr"/>
+                            <constraint firstItem="F0a-SH-zEJ" firstAttribute="top" secondItem="tw9-Ev-gb9" secondAttribute="bottom" constant="30" id="oUS-tF-sey">
+                                <variation key="heightClass=compact-widthClass=compact" constant="14"/>
+                            </constraint>
+                            <constraint firstItem="F0a-SH-zEJ" firstAttribute="leading" secondItem="TNx-6l-TW8" secondAttribute="leadingMargin" id="rej-bg-Xxe"/>
+                            <constraint firstItem="pwp-0O-4oh" firstAttribute="leading" secondItem="TNx-6l-TW8" secondAttribute="leadingMargin" id="siZ-EU-iud"/>
+                            <constraint firstItem="F0a-SH-zEJ" firstAttribute="trailing" secondItem="TNx-6l-TW8" secondAttribute="trailingMargin" id="toG-pN-hLC"/>
+                            <constraint firstItem="pwp-0O-4oh" firstAttribute="trailing" secondItem="TNx-6l-TW8" secondAttribute="trailingMargin" id="ua2-mJ-ODc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="abT-xC-EV2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="GqW-bD-j7M"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="facebookButton" destination="F0a-SH-zEJ" id="FJd-sW-JeV"/>
+                        <outlet property="forgotPasswordButton" destination="lkE-W0-Ifr" id="5jZ-U7-bq9"/>
+                        <outlet property="guestButton" destination="nQW-zi-44F" id="xRb-Mx-80r"/>
+                        <outlet property="logInButton" destination="pwp-0O-4oh" id="eeR-Zf-L7a"/>
+                        <outlet property="logoImageView" destination="tw9-Ev-gb9" id="3Pi-go-rhU"/>
+                        <outlet property="signUpButton" destination="8SY-jy-az4" id="ftk-ZC-ClF"/>
+                        <segue destination="msV-xP-tpq" kind="show" identifier="toLogin" id="M3k-VB-Y1g"/>
+                        <segue destination="B3c-1K-0YH" kind="show" identifier="toSignUp" id="W2c-R3-qUV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8A-tY-crt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-576" y="1539"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="BMg-qs-dCo">
+            <objects>
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="msV-xP-tpq" customClass="LogInViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hDn-1V-BVs"/>
+                        <viewControllerLayoutGuide type="bottom" id="UCf-sh-2s9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nxk-DO-hHP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XC0-ru-4Hk">
+                                <rect key="frame" x="16" y="113" width="568" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="ycX-zX-xxy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8zn-cw-QSG" customClass="LoginGenericButtonView">
+                                <rect key="frame" x="16" y="184" width="568" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Log In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdh-8o-VcZ">
+                                        <rect key="frame" x="260" y="20" width="48" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99987119436264038" green="0.99998223781585693" blue="0.99984109401702881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.65501832962036133" green="0.077254176139831543" blue="0.10172183811664581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="bdh-8o-VcZ" secondAttribute="centerX" id="XbO-gl-EdG"/>
+                                    <constraint firstAttribute="centerY" secondItem="bdh-8o-VcZ" secondAttribute="centerY" id="YOg-2N-ZWM"/>
+                                    <constraint firstAttribute="height" constant="60" id="sl5-DN-rCt"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="titleLabel" destination="bdh-8o-VcZ" id="HgA-vA-UiB"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTj-vU-bfd">
+                                <rect key="frame" x="237" y="247" width="126" height="30"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPassword:" destination="msV-xP-tpq" eventType="touchUpInside" id="tL6-HS-rb5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X88-yb-VSB">
+                                <rect key="frame" x="16" y="64" width="568" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="NNz-ZJ-bGL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8zn-cw-QSG" firstAttribute="leading" secondItem="Nxk-DO-hHP" secondAttribute="leading" constant="16" id="13o-vY-tJS"/>
+                            <constraint firstItem="XC0-ru-4Hk" firstAttribute="leading" secondItem="Nxk-DO-hHP" secondAttribute="leading" constant="16" id="2jx-QI-33I"/>
+                            <constraint firstItem="LTj-vU-bfd" firstAttribute="top" secondItem="8zn-cw-QSG" secondAttribute="bottom" constant="16" id="Jfy-ji-Xv6"/>
+                            <constraint firstAttribute="centerX" secondItem="XC0-ru-4Hk" secondAttribute="centerX" id="Jyy-rh-0kH"/>
+                            <constraint firstAttribute="trailing" secondItem="8zn-cw-QSG" secondAttribute="trailing" constant="16" id="Ov8-DB-LpH"/>
+                            <constraint firstItem="XC0-ru-4Hk" firstAttribute="top" secondItem="X88-yb-VSB" secondAttribute="bottom" constant="18" id="Qku-TP-W4U"/>
+                            <constraint firstItem="X88-yb-VSB" firstAttribute="leading" secondItem="Nxk-DO-hHP" secondAttribute="leading" constant="16" id="R2v-iH-vq3"/>
+                            <constraint firstItem="X88-yb-VSB" firstAttribute="top" secondItem="hDn-1V-BVs" secondAttribute="bottom" constant="44" id="WHg-tS-UBj"/>
+                            <constraint firstItem="8zn-cw-QSG" firstAttribute="top" secondItem="XC0-ru-4Hk" secondAttribute="bottom" constant="30" id="au7-sJ-7fG"/>
+                            <constraint firstAttribute="trailing" secondItem="XC0-ru-4Hk" secondAttribute="trailing" constant="16" id="ekv-Fm-vZw"/>
+                            <constraint firstAttribute="trailing" secondItem="X88-yb-VSB" secondAttribute="trailing" constant="16" id="frI-Yd-fEb"/>
+                            <constraint firstAttribute="centerX" secondItem="X88-yb-VSB" secondAttribute="centerX" id="ihG-wP-Kgm"/>
+                            <constraint firstAttribute="centerX" secondItem="LTj-vU-bfd" secondAttribute="centerX" id="uuG-kd-Ze7"/>
+                            <constraint firstAttribute="centerX" secondItem="8zn-cw-QSG" secondAttribute="centerX" id="y2o-Qu-pKg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logInButton" destination="8zn-cw-QSG" id="SsI-vM-WfU"/>
+                        <outlet property="passwordTextField" destination="XC0-ru-4Hk" id="tVq-hK-NwK"/>
+                        <outlet property="userNameTextField" destination="X88-yb-VSB" id="MCw-Ak-cn4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vkm-KH-ExA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="1213"/>
+        </scene>
+        <!--RegistrationTVC-->
+        <scene sceneID="ZMD-jY-w1s">
+            <objects>
+                <tableViewController storyboardIdentifier="registration" id="B3c-1K-0YH" customClass="RegistrationTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mhp-WX-mgV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleCell" id="Z7L-dc-TqJ" customClass="TitleProfileCell">
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z7L-dc-TqJ" id="MVw-We-ioI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please fill out your profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ9-mX-Fc0">
+                                            <rect key="frame" x="8" y="11" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pZ9-mX-Fc0" firstAttribute="leading" secondItem="MVw-We-ioI" secondAttribute="leading" constant="8" id="Hpd-71-x7i"/>
+                                        <constraint firstAttribute="trailing" secondItem="pZ9-mX-Fc0" secondAttribute="trailing" constant="8" id="Jgn-tS-yR2"/>
+                                        <constraint firstAttribute="bottom" secondItem="pZ9-mX-Fc0" secondAttribute="bottom" constant="11.5" id="WkY-6L-So9"/>
+                                        <constraint firstAttribute="centerY" secondItem="pZ9-mX-Fc0" secondAttribute="centerY" id="h1J-9y-Qc2"/>
+                                        <constraint firstAttribute="centerX" secondItem="pZ9-mX-Fc0" secondAttribute="centerX" id="lnb-Ni-Rbp"/>
+                                        <constraint firstItem="pZ9-mX-Fc0" firstAttribute="top" secondItem="MVw-We-ioI" secondAttribute="top" constant="11" id="qu1-0d-B8Z"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="title" destination="pZ9-mX-Fc0" id="4NN-QK-GsO"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoNameCell" rowHeight="130" id="zZj-5T-uOX" customClass="PhotoNameCell">
+                                <rect key="frame" x="0.0" y="66" width="375" height="130"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zZj-5T-uOX" id="Hbp-WQ-fXp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LKW-ll-R7G" customClass="PFImageView">
+                                            <rect key="frame" x="8" y="5" width="120" height="120"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="120" id="28A-Zv-JUc"/>
+                                                <constraint firstAttribute="width" constant="120" id="KON-Ue-ggT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxL-Ac-aZt" customClass="GCPlaceholderTextView">
+                                            <rect key="frame" x="136" y="5" width="176" height="120"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dxL-Ac-aZt" firstAttribute="top" secondItem="Hbp-WQ-fXp" secondAttribute="top" constant="5" id="0Nf-Ak-dtf"/>
+                                        <constraint firstAttribute="bottom" secondItem="dxL-Ac-aZt" secondAttribute="bottom" constant="4.5" id="2fo-Zf-jCQ"/>
+                                        <constraint firstItem="dxL-Ac-aZt" firstAttribute="leading" secondItem="LKW-ll-R7G" secondAttribute="trailing" constant="8" id="7dt-wU-c0c"/>
+                                        <constraint firstAttribute="trailing" secondItem="dxL-Ac-aZt" secondAttribute="trailing" constant="8" id="BIk-Wd-5WI"/>
+                                        <constraint firstAttribute="bottom" secondItem="LKW-ll-R7G" secondAttribute="bottom" constant="4.5" id="F7A-C3-pzy"/>
+                                        <constraint firstItem="LKW-ll-R7G" firstAttribute="top" secondItem="Hbp-WQ-fXp" secondAttribute="top" constant="5" id="KUB-Tf-pAA"/>
+                                        <constraint firstAttribute="centerY" secondItem="LKW-ll-R7G" secondAttribute="centerY" id="Qe7-Yq-99R"/>
+                                        <constraint firstAttribute="centerY" secondItem="dxL-Ac-aZt" secondAttribute="centerY" id="V28-X2-Jyx"/>
+                                        <constraint firstItem="LKW-ll-R7G" firstAttribute="leading" secondItem="Hbp-WQ-fXp" secondAttribute="leading" constant="8" id="oM0-OA-eU0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameTextView" destination="dxL-Ac-aZt" id="WvH-QA-j20"/>
+                                    <outlet property="photoView" destination="LKW-ll-R7G" id="STa-L9-U60"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCellOld" id="VoV-Gr-f7F" customClass="TextFieldCell">
+                                <rect key="frame" x="0.0" y="196" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VoV-Gr-f7F" id="3LX-sp-Pt8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john.smith@email.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-sU-rwC">
+                                            <rect key="frame" x="141" y="7" width="171" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="nSp-ag-aYw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFz-P5-qYm">
+                                            <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="88r-hq-xmD"/>
+                                                <constraint firstAttribute="height" constant="40" id="9a7-3n-sRJ"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LhB-sU-rwC" secondAttribute="bottom" constant="-1.5" id="AQW-bH-boS"/>
+                                        <constraint firstItem="aFz-P5-qYm" firstAttribute="leading" secondItem="3LX-sp-Pt8" secondAttribute="leading" constant="8" id="KQo-vQ-n5L"/>
+                                        <constraint firstAttribute="trailing" secondItem="LhB-sU-rwC" secondAttribute="trailing" constant="8" id="PMK-GM-Yrf"/>
+                                        <constraint firstAttribute="centerY" secondItem="LhB-sU-rwC" secondAttribute="centerY" id="TUL-n3-GR3"/>
+                                        <constraint firstAttribute="centerY" secondItem="aFz-P5-qYm" secondAttribute="centerY" id="Zb5-Bc-8if"/>
+                                        <constraint firstItem="LhB-sU-rwC" firstAttribute="leading" secondItem="aFz-P5-qYm" secondAttribute="trailing" constant="93" id="bW5-bR-TNc"/>
+                                        <constraint firstItem="LhB-sU-rwC" firstAttribute="trailing" secondItem="3LX-sp-Pt8" secondAttribute="trailingMargin" id="xRV-K3-6d6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconView" destination="aFz-P5-qYm" id="e4t-eJ-CnT"/>
+                                    <outlet property="textField" destination="LhB-sU-rwC" id="19D-Ld-MwQ"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" rowHeight="48" id="XsE-rx-UGH" customClass="TextFieldCell">
+                                <rect key="frame" x="0.0" y="240" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XsE-rx-UGH" id="pzs-SK-G33">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ak4-vh-Tvd">
+                                            <rect key="frame" x="8" y="0.0" width="304" height="47"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="974-tV-7X4">
+                                                    <rect key="frame" x="4" y="4" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="A2o-BA-AHf"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Gey-iI-hbm"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john.smith@email.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbB-uk-rkB">
+                                                    <rect key="frame" x="102" y="9" width="198" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.54038572311401367" green="0.54048943519592285" blue="0.54036843776702881" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="sbB-uk-rkB" firstAttribute="leading" secondItem="974-tV-7X4" secondAttribute="trailing" constant="58" id="8IE-gR-Kbq"/>
+                                                <constraint firstItem="974-tV-7X4" firstAttribute="leading" secondItem="Ak4-vh-Tvd" secondAttribute="leading" constant="4" id="93i-C4-rK1"/>
+                                                <constraint firstAttribute="centerY" secondItem="974-tV-7X4" secondAttribute="centerY" id="L0l-WG-VPj"/>
+                                                <constraint firstAttribute="centerY" secondItem="sbB-uk-rkB" secondAttribute="centerY" id="de1-ER-Goc"/>
+                                                <constraint firstAttribute="trailing" secondItem="sbB-uk-rkB" secondAttribute="trailing" constant="4" id="wrI-nw-63H"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Ak4-vh-Tvd" secondAttribute="bottom" id="9w5-JK-Rhs"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ak4-vh-Tvd" secondAttribute="trailing" constant="8" id="Jbh-H5-IuG"/>
+                                        <constraint firstItem="Ak4-vh-Tvd" firstAttribute="leading" secondItem="pzs-SK-G33" secondAttribute="leading" constant="8" id="ZrN-Gi-6de"/>
+                                        <constraint firstItem="Ak4-vh-Tvd" firstAttribute="top" secondItem="pzs-SK-G33" secondAttribute="top" id="qd7-f2-wNN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconView" destination="974-tV-7X4" id="zj7-d6-VIO"/>
+                                    <outlet property="mainView" destination="Ak4-vh-Tvd" id="825-bZ-zax"/>
+                                    <outlet property="textField" destination="sbB-uk-rkB" id="c7h-xe-jfo"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickerCell" rowHeight="48" id="by4-Fg-Guh" customClass="LabelCell">
+                                <rect key="frame" x="0.0" y="288" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="by4-Fg-Guh" id="ikK-eg-KwB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7C-gw-68q">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="48"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QlA-h0-5Uu">
+                                                    <rect key="frame" x="4" y="4" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="Rxa-rV-tPC"/>
+                                                        <constraint firstAttribute="width" constant="40" id="nJS-fY-tYc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Birthday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puJ-8l-0kK">
+                                                    <rect key="frame" x="94" y="4" width="478" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.54038572311401367" green="0.54048943519592285" blue="0.54036843776702881" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="QlA-h0-5Uu" secondAttribute="bottom" constant="4" id="Dnt-du-ICj"/>
+                                                <constraint firstItem="QlA-h0-5Uu" firstAttribute="leading" secondItem="q7C-gw-68q" secondAttribute="leading" constant="4" id="Jcb-vm-uxA"/>
+                                                <constraint firstItem="puJ-8l-0kK" firstAttribute="leading" secondItem="QlA-h0-5Uu" secondAttribute="trailing" constant="50" id="OBY-XO-c7m"/>
+                                                <constraint firstAttribute="trailing" secondItem="puJ-8l-0kK" secondAttribute="trailing" constant="12" id="RM1-jI-Yhv"/>
+                                                <constraint firstAttribute="bottom" secondItem="puJ-8l-0kK" secondAttribute="bottom" constant="4" id="WiM-od-Zmt"/>
+                                                <constraint firstItem="puJ-8l-0kK" firstAttribute="top" secondItem="q7C-gw-68q" secondAttribute="top" constant="4" id="Yuw-vo-n2D"/>
+                                                <constraint firstItem="QlA-h0-5Uu" firstAttribute="top" secondItem="q7C-gw-68q" secondAttribute="top" constant="4" id="bLF-KE-8w1"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="q7C-gw-68q" firstAttribute="leading" secondItem="ikK-eg-KwB" secondAttribute="leading" constant="8" id="9Nk-dC-kR4"/>
+                                        <constraint firstAttribute="trailing" secondItem="q7C-gw-68q" secondAttribute="trailing" constant="8" id="JY9-S3-LJ4"/>
+                                        <constraint firstItem="q7C-gw-68q" firstAttribute="top" secondItem="ikK-eg-KwB" secondAttribute="top" id="nIw-FA-EwT"/>
+                                        <constraint firstAttribute="bottom" secondItem="q7C-gw-68q" secondAttribute="bottom" id="xkw-p7-a5M"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconView" destination="QlA-h0-5Uu" id="Ldd-4K-GuM"/>
+                                    <outlet property="label" destination="puJ-8l-0kK" id="f1z-X0-dvT"/>
+                                    <outlet property="mainView" destination="q7C-gw-68q" id="fv2-cj-Qu5"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickerCellOld" id="Dbm-0P-x55" customClass="LabelCell">
+                                <rect key="frame" x="0.0" y="336" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dbm-0P-x55" id="7hG-Qt-zAR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gWw-Lu-3hy">
+                                            <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="77b-Ga-tMu"/>
+                                                <constraint firstAttribute="height" constant="40" id="uyy-MG-jke"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Birthday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFP-HH-bHv">
+                                            <rect key="frame" x="143" y="2" width="169" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="IeP-X7-6JO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dFP-HH-bHv" firstAttribute="top" secondItem="7hG-Qt-zAR" secondAttribute="top" constant="2" id="4qk-5T-htA"/>
+                                        <constraint firstAttribute="centerY" secondItem="gWw-Lu-3hy" secondAttribute="centerY" id="Hnj-LO-GB0"/>
+                                        <constraint firstAttribute="centerY" secondItem="dFP-HH-bHv" secondAttribute="centerY" id="HoD-CG-RfE"/>
+                                        <constraint firstItem="dFP-HH-bHv" firstAttribute="trailing" secondItem="7hG-Qt-zAR" secondAttribute="trailingMargin" id="Lwd-Je-HGx"/>
+                                        <constraint firstItem="dFP-HH-bHv" firstAttribute="leading" secondItem="gWw-Lu-3hy" secondAttribute="trailing" constant="95" id="dCC-S2-HSd"/>
+                                        <constraint firstAttribute="bottom" secondItem="dFP-HH-bHv" secondAttribute="bottom" constant="1.5" id="h7j-JP-29s"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dFP-HH-bHv" secondAttribute="bottom" constant="-6.5" id="hBc-m9-oDg"/>
+                                        <constraint firstItem="gWw-Lu-3hy" firstAttribute="leading" secondItem="7hG-Qt-zAR" secondAttribute="leading" constant="8" id="hzN-ws-MgP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconView" destination="gWw-Lu-3hy" id="kCI-oP-rOy"/>
+                                    <outlet property="label" destination="dFP-HH-bHv" id="41r-x6-YdR"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoneCell" rowHeight="103" id="HO8-RF-4tb" customClass="DoneRegCell">
+                                <rect key="frame" x="0.0" y="380" width="375" height="103"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HO8-RF-4tb" id="CGt-55-xAm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="102.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLV-Tk-DGd">
+                                            <rect key="frame" x="60" y="22" width="200" height="60"/>
+                                            <color key="backgroundColor" red="0.60718870162963867" green="0.0" blue="0.093584150075912476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="I56-VN-8Cv"/>
+                                                <constraint firstAttribute="height" constant="60" id="bhp-yA-aGy"/>
+                                            </constraints>
+                                            <state key="normal" title="Done">
+                                                <color key="titleColor" red="0.99987119436264038" green="0.99998223781585693" blue="0.99984109401702881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.99987119436264038" green="0.99998223781585693" blue="0.99984109401702881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="checkProfile:" destination="HO8-RF-4tb" eventType="touchUpInside" id="Ahw-xr-Z0R"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uLV-Tk-DGd" secondAttribute="bottom" constant="12.5" id="0P3-BP-E1g"/>
+                                        <constraint firstItem="uLV-Tk-DGd" firstAttribute="top" secondItem="CGt-55-xAm" secondAttribute="topMargin" constant="14" id="5lj-sL-OYI"/>
+                                        <constraint firstAttribute="centerX" secondItem="uLV-Tk-DGd" secondAttribute="centerX" id="w5K-CY-eLA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="doneButton" destination="uLV-Tk-DGd" id="nOc-GM-Jxe"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TermsCell" id="Fvx-c1-hJE" customClass="TermsRegCell">
+                                <rect key="frame" x="0.0" y="483" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fvx-c1-hJE" id="tS5-6I-QWs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="By tapping Done, you are indicading that you have read the Privacy Policy and Agree to the Terms of Service" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiu-gh-8jd" customClass="TTTAttributedLabel">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eiu-gh-8jd" firstAttribute="top" secondItem="tS5-6I-QWs" secondAttribute="top" id="HLZ-Xn-iKs"/>
+                                        <constraint firstAttribute="trailing" secondItem="eiu-gh-8jd" secondAttribute="trailing" id="Rqj-Ps-oju"/>
+                                        <constraint firstItem="eiu-gh-8jd" firstAttribute="leading" secondItem="tS5-6I-QWs" secondAttribute="leading" id="Uao-YF-klh"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eiu-gh-8jd" secondAttribute="bottom" constant="20" id="iAZ-es-0ab"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageLabel" destination="eiu-gh-8jd" id="VZo-Xd-WpJ"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="someCell" textLabel="pSH-2e-DoX" imageView="kju-Kk-me9" style="IBUITableViewCellStyleDefault" id="3Uo-Vc-72F">
+                                <rect key="frame" x="0.0" y="527" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Uo-Vc-72F" id="quZ-GS-Mou">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pSH-2e-DoX">
+                                            <rect key="frame" x="45" y="0.0" width="315" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="10.png" id="kju-Kk-me9">
+                                            <rect key="frame" x="15" y="14" width="15" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="B3c-1K-0YH" id="MlY-ob-oy5"/>
+                            <outlet property="delegate" destination="B3c-1K-0YH" id="YaE-fb-ydc"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="oh5-Po-shk" kind="show" identifier="profileToTerms" id="pTX-rm-ACV"/>
+                        <segue destination="JBl-j8-4T8" kind="show" identifier="profileToPrivacy" id="Mcj-ZT-zHo"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52W-05-PlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="1899"/>
+        </scene>
+        <!--Profile Table View Controller-->
+        <scene sceneID="xpD-qC-nw5">
+            <objects>
+                <tableViewController storyboardIdentifier="registrationOld" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0g7-cF-LP2" customClass="profileTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uf2-bR-lFv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="77U-a0-b2L">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Please Fill Out Your Profile" id="jQD-Pb-dQs"/>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="doneCell" rowHeight="44" id="335-Fx-dIZ" customClass="doneCell">
+                                <rect key="frame" x="0.0" y="66" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="335-Fx-dIZ" id="7aw-rk-F5y">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-2S-Wp4">
+                                            <rect key="frame" x="282" y="7" width="37" height="30"/>
+                                            <state key="normal" title="Done">
+                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="doneButton:" destination="335-Fx-dIZ" eventType="touchUpInside" id="gNg-Jx-5Ni"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerX" secondItem="aOT-2S-Wp4" secondAttribute="centerX" id="9yK-q7-zho"/>
+                                        <constraint firstAttribute="centerY" secondItem="aOT-2S-Wp4" secondAttribute="centerY" id="WdU-yt-n04"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="emailCell" id="ieg-1X-6D7" customClass="emailCell">
+                                <rect key="frame" x="0.0" y="110" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ieg-1X-6D7" id="1WI-qE-JPJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-CV-PIJ">
+                                            <rect key="frame" x="15" y="11" width="46" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john.smith@email.com" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rNO-Mn-XBa">
+                                            <rect key="frame" x="144" y="7" width="448" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                            <connections>
+                                                <action selector="textFieldReturn:" destination="0g7-cF-LP2" eventType="editingDidEndOnExit" id="hUb-py-RuW"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="rNO-Mn-XBa" secondAttribute="centerY" id="5Yt-85-mfm"/>
+                                        <constraint firstItem="rNO-Mn-XBa" firstAttribute="trailing" secondItem="1WI-qE-JPJ" secondAttribute="trailingMargin" id="85V-gE-7jn"/>
+                                        <constraint firstItem="Eer-CV-PIJ" firstAttribute="leading" secondItem="1WI-qE-JPJ" secondAttribute="leadingMargin" constant="7" id="Xzd-Qx-caD"/>
+                                        <constraint firstItem="rNO-Mn-XBa" firstAttribute="leading" secondItem="Eer-CV-PIJ" secondAttribute="trailing" constant="82" id="g79-yQ-wJp"/>
+                                        <constraint firstAttribute="centerY" secondItem="Eer-CV-PIJ" secondAttribute="centerY" id="ypJ-gQ-ACW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="rNO-Mn-XBa" id="1cs-wC-eKB"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="phoneCell" id="XEk-eK-1Pa" customClass="phoneCell">
+                                <rect key="frame" x="0.0" y="154" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XEk-eK-1Pa" id="ePK-Le-as6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iX-BW-her">
+                                            <rect key="frame" x="15" y="11" width="120" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(555) 555-5555" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RC0-G8-uv6">
+                                            <rect key="frame" x="144" y="7" width="448" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="namePhonePad" returnKeyType="done"/>
+                                            <connections>
+                                                <action selector="textFieldReturn:" destination="0g7-cF-LP2" eventType="editingDidEndOnExit" id="3Y0-oj-sci"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="4iX-BW-her" secondAttribute="centerY" id="6Nf-BE-vg4"/>
+                                        <constraint firstItem="4iX-BW-her" firstAttribute="leading" secondItem="ePK-Le-as6" secondAttribute="leadingMargin" constant="7" id="8hp-Da-Mpn"/>
+                                        <constraint firstItem="RC0-G8-uv6" firstAttribute="trailing" secondItem="ePK-Le-as6" secondAttribute="trailingMargin" id="Rnm-p6-BJr"/>
+                                        <constraint firstAttribute="centerY" secondItem="RC0-G8-uv6" secondAttribute="centerY" id="c1i-pc-WvV"/>
+                                        <constraint firstItem="RC0-G8-uv6" firstAttribute="leading" secondItem="4iX-BW-her" secondAttribute="trailing" constant="8" id="zl1-4n-BEB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="RC0-G8-uv6" id="SoU-nw-I5N"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="termsCell" rowHeight="67" id="9lg-B7-hcp" customClass="TermsCellOld">
+                                <rect key="frame" x="0.0" y="198" width="375" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9lg-B7-hcp" id="CpV-EM-SGd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Privacy Policy and Terms of Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrk-4o-4mI" customClass="TTTAttributedLabel">
+                                            <rect key="frame" x="8" y="25" width="584" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerX" secondItem="Rrk-4o-4mI" secondAttribute="centerX" id="BKy-HT-wkX"/>
+                                        <constraint firstItem="Rrk-4o-4mI" firstAttribute="trailing" secondItem="CpV-EM-SGd" secondAttribute="trailingMargin" id="NIC-3W-rZt"/>
+                                        <constraint firstItem="Rrk-4o-4mI" firstAttribute="leading" secondItem="CpV-EM-SGd" secondAttribute="leadingMargin" id="UGj-7L-UIb"/>
+                                        <constraint firstAttribute="centerY" secondItem="Rrk-4o-4mI" secondAttribute="centerY" id="ytW-74-1id"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="termsTextLabel" destination="Rrk-4o-4mI" id="CLL-rh-Nmt"/>
+                                    <outlet property="textLabel" destination="Rrk-4o-4mI" id="iUR-G5-Kl1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0g7-cF-LP2" id="z1G-7d-9A9"/>
+                            <outlet property="delegate" destination="0g7-cF-LP2" id="sfb-Kg-HN0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="cOJ-Zf-pfv"/>
+                    <connections>
+                        <outlet property="navBar" destination="77U-a0-b2L" id="3A2-kH-4Fk"/>
+                        <segue destination="KDQ-Pf-Ohu" kind="presentation" identifier="profileToMain" id="lhW-Z1-flR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L46-UG-uys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144" y="-409"/>
+        </scene>
+        <!--Privacy Policy-->
+        <scene sceneID="226-T4-dDq">
+            <objects>
+                <viewController storyboardIdentifier="Policy" title="Privacy Policy" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JBl-j8-4T8" customClass="documentsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wxp-3G-iAK"/>
+                        <viewControllerLayoutGuide type="bottom" id="kEe-KO-cO4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GvK-oZ-zKn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDr-jN-Z5W">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">When accessing our Website, unWine will learn certain information about you during your visit. How we will handle information we learn about you depends upon what you do when visiting our site.  If you visit our site to read or download information on our pages, we collect and store only the following information about you:
+1.  The name of the domain from which you access the Internet
+2.  The date and time you access our site
+3.  The Internet address of the website you used to link directly to our site. 
+4.  The location where to you access the website from.
+If you identify yourself by sending us an e-mail containing personal information, then the information collected will be solely used to respond to your message.
+The information collected is for statistical purposes. unWine may use software programs to create summary statistics, which are used for such purposes as assessing the number of visitors to the different sections of our site, what information is of most and least interest, determining technical design specifications, and identifying system performance or problem areas.
+For site security purposes and to ensure that this service remains available to all users, unWine uses software programs to monitor network traffic to identify unauthorized attempts to upload or change information, or otherwise cause damage.  unWine will not obtain personally-identifying information about you when you visit our site, unless you choose to provide such information to us, nor will such information be sold or otherwise transferred to unaffiliated third parties without the approval of the user at the time of collection.
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nDr-jN-Z5W" firstAttribute="top" secondItem="wxp-3G-iAK" secondAttribute="bottom" id="7Yr-nr-qNC"/>
+                            <constraint firstItem="kEe-KO-cO4" firstAttribute="top" secondItem="nDr-jN-Z5W" secondAttribute="bottom" id="9WS-jy-krh"/>
+                            <constraint firstAttribute="trailing" secondItem="nDr-jN-Z5W" secondAttribute="trailing" id="GaX-31-kN5"/>
+                            <constraint firstItem="nDr-jN-Z5W" firstAttribute="leading" secondItem="GvK-oZ-zKn" secondAttribute="leading" id="MIK-cT-6L3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AkT-Zq-elg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HB4-Ep-HTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="1208"/>
+        </scene>
+        <!--Terms of Service-->
+        <scene sceneID="W6a-gW-O88">
+            <objects>
+                <viewController storyboardIdentifier="ToS" title="Terms of Service" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oh5-Po-shk" customClass="documentsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cwS-a1-brP"/>
+                        <viewControllerLayoutGuide type="bottom" id="qmw-7j-A21"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K01-9T-hAa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmZ-bn-iDw">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">1. User's Acknowledgment and Acceptance of Terms
+LION Mobile LLC ("Us" or "We") provides the unWine site and various related services (collectively, the "site") to you, the user, subject to your compliance with all the terms, conditions, and notices contained or referenced herein (the "Terms of Use"), as well as any other written agreement between us and you. In addition, when using particular services or materials on this site, users shall be subject to any posted rules applicable to such services or materials that may contain terms and conditions in addition to those in these Terms of Use. All such guidelines or rules are hereby incorporated by reference into these Terms of Use.
+BY USING THIS SITE, YOU AGREE TO BE BOUND BY THESE TERMS OF USE. IF YOU DO NOT WISH TO BE BOUND BY THE THESE TERMS OF USE, PLEASE EXIT THE SITE NOW. YOUR REMEDY FOR DISSATISFACTION WITH THIS SITE, OR ANY PRODUCTS, SERVICES, CONTENT, OR OTHER INFORMATION AVAILABLE ON OR THROUGH THIS SITE, IS TO STOP USING THE SITE AND/OR THOSE PARTICULAR PRODUCTS OR SERVICES. YOUR AGREEMENT WITH US REGARDING COMPLIANCE WITH THESE TERMS OF USE BECOMES EFFECTIVE IMMEDIATELY UPON COMMENCEMENT OF YOUR USE OF THIS SITE.
+These Terms of Use are effective as of 08/06/13. We expressly reserve the right to change these Terms of Use from time to time without notice to you. You acknowledge and agree that it is your responsibility to review this site and these Terms of Use from time to time and to familiarize yourself with any modifications. Your continued use of this site after such modifications will constitute acknowledgement of the modified Terms of Use and agreement to abide and be bound by the modified Terms of Use.
+As used in these Terms of Use, references to our "Affiliates" include our owners, subsidiaries, affiliated companies, officers, directors, suppliers, partners, sponsors, and advertisers, and includes (without limitation) all parties involved in creating, producing, and/or delivering this site and/or its contents.
+2. Description of Services
+We make various services available on this site including, but not limited to, Information about Wine, Wineries, Venues, and Location, and other like services. You are responsible for providing, at your own expense, all equipment necessary to use the services, including a computer, modem, and Internet access (including payment of all fees associated with such access).
+We reserve the sole right to either modify or discontinue the site, including any of the sites features, at any time with or without notice to you. We will not be liable to you or any third party should we exercise such right. Any new features that augment or enhance the then-current services on this site shall also be subject to these Terms of Use.
+3. Registration Data and Privacy
+In order to access some of the services on this site, you will be required to use an account and password that can be obtained by completing our online registration form, which requests certain information and data ("Registration Data"), and maintaining and updating your Registration Data as required. By registering, you agree that all information provided in the Registration Data is true and accurate and that you will maintain and update this information as required in order to keep it current, complete, and accurate.
+You also grant us the right to disclose to third parties certain Registration Data about you. The information we obtain through your use of this site, including your Registration Data, is subject to our Privacy Policy, which is specifically incorporated by reference into these Terms of Use.
+4. Conduct on Site
+Your use of the site is subject to all applicable laws and regulations, and you are solely responsible for the substance of your communications through the site. By posting information in or otherwise using any communications service, chat room, message board, newsgroup, software library, or other interactive service that may be available to you on or through this site, you agree that you will not upload, share, post, or otherwise distribute or facilitate distribution of any content -- including text, communications, software, images, sounds, data, or other information -- that:
+a. is unlawful, threatening, abusive, harassing, defamatory, libelous, deceptive, fraudulent, invasive of anothers privacy, tortious, contains explicit or graphic descriptions or accounts of sexual acts (including but not limited to sexual language of a violent or threatening nature directed at another individual or group of individuals), or otherwise violates our rules or policies;
+b. victimizes, harasses, degrades, or intimidates an individual or group of individuals on the basis of religion, gender, sexual orientation, race, ethnicity, age, or disability;
+c. infringes on any patent, trademark, trade secret, copyright, right of publicity, or other proprietary right of any party;
+d. constitutes unauthorized or unsolicited advertising, junk or bulk email (also known as "spamming"), chain letters, any other form of unauthorized solicitation, or any form of lottery or gambling;
+e. contains software viruses or any other computer code, files, or programs that are designed or intended to disrupt, damage, or limit the functioning of any software, hardware, or telecommunications equipment or to damage or obtain unauthorized access to any data or other information of any third party; or
+f. impersonates any person or entity, including any of our employees or representatives.
+We neither endorse nor assume any liability for the contents of any material uploaded or submitted by third party users of the site. We generally do not pre-screen, monitor, or edit the content posted by users of communications services, chat rooms, message boards, newsgroups, software libraries, or other interactive services that may be available on or through this site. However, we and our agents have the right at their sole discretion to remove any content that, in our judgment, does not comply with these Terms of Use and any other rules of user conduct for our site, or is otherwise harmful, objectionable, or inaccurate. We are not responsible for any failure or delay in removing such content. You hereby consent to such removal and waive any claim against us arising out of such removal of content. See "Use of Your Materials" below for a description of the procedures to be followed in the event that any party believes that content posted on this site infringes on any patent, trademark, trade secret, copyright, right of publicity, or other proprietary right of any party.
+In addition, you may not use your account to breach security of another account or attempt to gain unauthorized access to another network or server. Not all areas of the site may be available to you or other authorized users of the site. You shall not interfere with anyone else’s use and enjoyment of the site or other similar services. Users who violate systems or network security may incur criminal or civil liability.
+You agree that we may at any time, and at our sole discretion, terminate your membership, account, or other affiliation with our site without prior notice to you for violating any of the above provisions. In addition, you acknowledge that we will cooperate fully with investigations of violations of systems or network security at other sites, including cooperating with law enforcement authorities in investigating suspected criminal violations.
+5. Third Party Sites and Information
+This site may link you to other sites on the Internet or otherwise include references to information, documents, software, materials and/or services provided by other parties. These sites may contain information or material that some people may find inappropriate or offensive. These other sites and parties are not under our control, and you acknowledge that we are not responsible for the accuracy, copyright compliance, legality, decency, or any other aspect of the content of such sites, nor are we responsible for errors or omissions in any references to other parties or their products and services. The inclusion of such a link or reference is provided merely as a convenience and does not imply endorsement of, or association with, the site or party by us, or any warranty of any kind, either express or implied.
+6. Intellectual Property Information
+Copyright (c) 08/06/13 LION Mobile LLC All Rights Reserved.
+For purposes of these Terms of Use, "content" is defined as any information, data, communications, software, photos, video, graphics, music, sounds, and other material and services that can be viewed by users on our site. This includes message boards, chat, and other original content.
+By accepting these Terms of Use, you acknowledge and agree that all content presented to you on this site is protected by copyrights, trademarks, service marks, patents or other proprietary rights and laws, and is the sole property of LION Mobile LLC and/or its Affiliates. You are only permitted to use the content as expressly authorized by us or the specific content provider. Except for a single copy made for personal use only, you may not copy, reproduce, modify, republish, upload, post, transmit, or distribute any documents or information from this site in any form or by any means without prior written permission from us or the specific content provider, and you are solely responsible for obtaining permission before reusing any copyrighted material that is available on this site. Any unauthorized use of the materials appearing on this site may violate copyright, trademark and other applicable laws and could result in criminal or civil penalties.
+Neither we or our Affiliates warrant or represent that your use of materials displayed on, or obtained through, this site will not infringe the rights of third parties. See "User's Materials" below for a description of the procedures to be followed in the event that any party believes that content posted on this site infringes on any patent, trademark, trade secret, copyright, right of publicity, or other proprietary right of any party.
+All custom graphics, icons, logos and service names are registered trademarks, trademarks or service marks of LION Mobile LLC or its Affiliates. All other trademarks or service marks are property of their respective owners. Nothing in these Terms of Use grants you any right to use any trademark, service mark, logo, and/or the name of LION Mobile LLC or its Affiliates.
+7. Unauthorized Use of Materials
+Subject to our Privacy Policy, any communication or material that you transmit to this site or to us, whether by electronic mail, post, or other means, for any reason, will be treated as non-confidential and non-proprietary. While you retain all rights in such communications or material, you grant us and our agents and affiliates a non-exclusive, paid-up, perpetual, and worldwide right to copy, distribute, display, perform, publish, translate, adapt, modify, and otherwise use such material for any purpose regardless of the form or medium (now known or not currently known) in which it is used.
+Please do not submit confidential or proprietary information to us unless we have mutually agreed in writing otherwise. We are also unable to accept your unsolicited ideas or proposals, so please do not submit them to us in any circumstance.
+We respect the intellectual property of others, and we ask you to do the same. If you or any user of this site believes its copyright, trademark or other property rights have been infringed by a posting on this site, you or the user should send notification to our Designated Agent (as identified below) immediately. To be effective, the notification must include:
+1. Identify in sufficient detail the copyrighted work that you believe has been infringed upon or other information sufficient to specify the copyrighted work being infringed).
+2. Identify the material that you claim is infringing the copyrighted work listed in item #1 above.
+3. Provide information reasonably sufficient to permit us to contact you (email address is preferred).
+4. Provide information, if possible, sufficient to permit us to notify the owner/administrator of the allegedly infringing webpage or other content (email address is preferred).
+5. Include the following statement: "I have a good faith belief that use of the copyrighted materials described above as allegedly infringing is not authorized by the copyright owner, its agent, or the law."
+6. Include the following statement: "I swear, under penalty of perjury, that the information in the notification is accurate and that I am the copyright owner or am authorized to act on behalf of the owner of an exclusive right that is allegedly infringed."
+7. Sign the paper.
+8. Send the written communication to the following address:
+Designated Agent for Claimed Infringement:
+Contact: Devon Ryan Address: LION Mobile LLC Apt. 3301 San Antonio, TX 78249 
+Email: devon.ryan@lionmobile.co
+You acknowledge and agree that upon receipt of a notice of a claim of copyright infringement, we may immediately remove the identified materials from our site without liability to you or any other party and that the claims of the complaining party and the party that originally posted the materials will be referred to the United States Copyright Office for adjudication as provided in the Digital Millennium Copyright Act.
+8. Disclaimer of Warranties
+ALL MATERIALS AND SERVICES ON THIS SITE ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THE WARRANTY OF NON-INFRINGEMENT. WITHOUT LIMITING THE FOREGOING, WE MAKE NO WARRANTY THAT (A) THE SERVICES AND MATERIALS WILL MEET YOUR REQUIREMENTS, (B) THE SERVICES AND MATERIALS WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE, (C) THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF THE SERVICES OR MATERIALS WILL BE EFFECTIVE, ACCURATE OR RELIABLE, OR (D) THE QUALITY OF ANY PRODUCTS, SERVICES, OR INFORMATION PURCHASED OR OBTAINED BY YOU FROM THE SITE FROM US OR OUR AFFILIATES WILL MEET YOUR EXPECTATIONS OR BE FREE FROM MISTAKES, ERRORS OR DEFECTS.
+THIS SITE COULD INCLUDE TECHNICAL OR OTHER MISTAKES, INACCURACIES OR TYPOGRAPHICAL ERRORS. WE MAY MAKE CHANGES TO THE MATERIALS AND SERVICES AT THIS SITE, INCLUDING THE PRICES AND DESCRIPTIONS OF ANY PRODUCTS LISTED HEREIN, AT ANY TIME WITHOUT NOTICE. THE MATERIALS OR SERVICES AT THIS SITE MAY BE OUT OF DATE, AND WE MAKE NO COMMITMENT TO UPDATE SUCH MATERIALS OR SERVICES.
+THE USE OF THE SERVICES OR THE DOWNLOADING OR OTHER ACQUISITION OF ANY MATERIALS THROUGH THIS SITE IS DONE AT YOUR OWN DISCRETION AND RISK AND WITH YOUR AGREEMENT THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM SUCH ACTIVITIES.
+Through your use of the site, you may have the opportunities to engage in commercial transactions with other users and vendors. You acknowledge that all transactions relating to any merchandise or services offered by any party, including, but not limited to the purchase terms, payment terms, warranties, guarantees, maintenance and delivery terms relating to such transactions, are agreed to solely between the seller or purchaser of such merchandize and services and you. WE MAKE NO WARRANTY REGARDING ANY TRANSACTIONS EXECUTED THROUGH, OR IN CONNECTION WITH THIS SITE, AND YOU UNDERSTAND AND AGREE THAT SUCH TRANSACTIONS ARE CONDUCTED ENTIRELY AT YOUR OWN RISK. ANY WARRANTY THAT IS PROVIDED IN CONNECTION WITH ANY PRODUCTS, SERVICES, MATERIALS, OR INFORMATION AVAILABLE ON OR THROUGH THIS SITE FROM A THIRD PARTY IS PROVIDED SOLELY BY SUCH THIRD PARTY, AND NOT BY US OR ANY OTHER OF OUR AFFILIATES.
+Content available through this site often represents the opinions and judgments of an information provider, site user, or other person or entity not connected with us. We do not endorse, nor are we responsible for the accuracy or reliability of, any opinion, advice, or statement made by anyone other than an authorized LION Mobile LLC spokesperson speaking in his/her official capacity. Please refer to the specific editorial policies posted on various sections of this site for further information, which policies are incorporated by reference into these Terms of Use.
+You understand and agree that temporary interruptions of the services available through this site may occur as normal events. You further understand and agree that we have no control over third party networks you may access in the course of the use of this site, and therefore, delays and disruption of other network transmissions are completely beyond our control.
+You understand and agree that the services available on this site are provided "AS IS" and that we assume no responsibility for the timeliness, deletion, mis-delivery or failure to store any user communications or personalization settings.
+SOME STATES OR JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES, SO SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
+9. Limitation of Liability
+IN NO EVENT SHALL WE, OUR AFFILIATES, SUBSIDIARIES, SUCCESSORS OR ASSIGNS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY SPECIAL, PUNITIVE, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER OR NOT WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND ON ANY THEORY OF LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OF THIS SITE OR OF ANY WEB SITE REFERENCED OR LINKED TO FROM THIS SITE.
+FURTHER, WE SHALL NOT BE LIABLE IN ANY WAY FOR THIRD PARTY GOODS AND SERVICES OFFERED THROUGH THIS SITE OR FOR ASSISTANCE IN CONDUCTING COMMERCIAL TRANSACTIONS THROUGH THIS SITE, INCLUDING WITHOUT LIMITATION THE PROCESSING OF ORDERS.
+SOME JURISDICTIONS PROHIBIT THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
+10. Indemnification
+Upon a request by us, you agree to defend, indemnify, and hold us and our Affiliates harmless from all liabilities, claims, and expenses, including attorney’s fees, that arise from your use or misuse of this site. We reserve the right, at our own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, in which event you will cooperate with us in asserting any available defenses.
+11. Security and Password
+You are solely responsible for maintaining the confidentiality of your password and account and for any and all statements made and acts or omissions that occur through the use of your password and account. Therefore, you must take steps to ensure that others do not gain access to your password and account. Our personnel will never ask you for your password. You may not transfer or share your account with anyone, and we reserve the right to immediately terminate your account if you do transfer or share your account.
+12. Participation in Promotions
+From time to time, this site may include advertisements offered by third parties. You may enter into correspondence with or participate in promotions of the advertisers showing their products on this site. Any such correspondence or promotions, including the delivery of and the payment for goods and services, and any other terms, conditions, warranties or representations associated with such correspondence or promotions, are solely between you and the advertiser. We assume no liability, obligation or responsibility for any part of any such correspondence or promotion.
+13. E-mail, Messaging, Blogging, and Chat Services
+We may make email, messaging, blogging, or chat services (collectively, "Communications") available to users of our site, either directly or through a third-party provider. We make available separate supplemental agreements characterizing the relationship between you and us that, except where expressly noted or contradictory, includes these Terms.
+We will not inspect or disclose the contents of private Communications except with the consent of the sender or the recipient, or in the narrowly-defined situations provided under the Electronic Communications Privacy Act, or as other required by law or by court or governmental order. Further information is available in our Privacy Policy.
+We may employ automated monitoring devices or techniques to protect our users from mass unsolicited communications (also known as "spam") and/or other types of electronic communications that we deem inconsistent with our business purposes. However, such devices or techniques are not perfect, and we will not be responsible for any legitimate communication that is blocked, or for any unsolicited communication that is not blocked.
+Mailboxes may have a limited storage capacity. If you exceed the maximum permitted storage space, we may employ automated devices that delete or block email messages that exceed the limit. We will not be responsible for such deleted or blocked messages.
+14. International Use
+Although this site may be accessible worldwide, we make no representation that materials on this site are appropriate or available for use in locations outside the United States, and accessing them from territories where their contents are illegal is prohibited. Those who choose to access this site from other locations do so on their own initiative and are responsible for compliance with local laws. Any offer for any product, service, and/or information made in connection with this site is void where prohibited.
+15. Termination of Use
+You agree that we may, in our sole discretion, terminate or suspend your access to all or part of the site with or without notice and for any reason, including, without limitation, breach of these Terms of Use. Any suspected fraudulent, abusive or illegal activity may be grounds for terminating your relationship and may be referred to appropriate law enforcement authorities.
+Upon termination or suspension, regardless of the reasons therefore, your right to use the services available on this site immediately ceases, and you acknowledge and agree that we may immediately deactivate or delete your account and all related information and files in your account and/or bar any further access to such files or this site. We shall not be liable to you or any third party for any claims or damages arising out of any termination or suspension or any other actions taken by us in connection with such termination or suspension.
+16. Governing Law
+This site (excluding any linked sites) is controlled by us from our offices within the California, United States of America. It can be accessed from all 50 states, as well as from other countries around the world. As each of these places has laws that may differ from those of California, by accessing this site both of us agree that the statutes and laws of the State of California, without regard to the conflicts of laws principles thereof and the United Nations Convention on the International Sales of Goods, will apply to all matters relating to the use of this site and the purchase of products and services available through this site. Each of us agrees and hereby submits to the exclusive personal jurisdiction and venue any court of competent jurisdiction within the State of California with respect to such matters.
+17. Notices
+All notices to a party shall be in writing and shall be made either via email or conventional mail. Notices to us must be sent to the attention of Customer Service at devon.ryan@lionmobile.co, if by email, or at LION Mobile - 5511 Pecan Springs Rd Apt 3301, San Antonio, TX 78249 if by conventional mail. Notices to you may be sent to the address supplied by you as part of your Registration Data. In addition, we may broadcast notices or messages through the site to inform you of changes to the site or other matters of importance, and such broadcasts shall constitute notice to you at the time of sending.
+18. Entire Agreement
+These terms and conditions constitute the entire agreement and understanding between us concerning the subject matter of this agreement and supersedes all prior agreements and understandings of the parties with respect to that subject matter. These Terms of Use may not be altered, supplemented, or amended by the use of any other document(s). Any attempt to alter, supplement or amend this document or to enter an order for products or services which are subject to additional or altered terms and conditions shall be null and void, unless otherwise agreed to in a written agreement signed by you and us. To the extent that anything in or associated with this site is in conflict or inconsistent with these Terms of Use, these Terms of Use shall take precedence.
+19. Miscellaneous
+In any action to enforce these Terms of Use, the prevailing party will be entitled to costs and attorneys’ fees. Any cause of action brought by you against us or our Affiliates must be instituted with one year after the cause of action arises or be deemed forever waived and barred.
+You may not assign your rights and obligations under these Terms of Use to any party, and any purported attempt to do so will be null and void. We may free assign our rights and obligations under these Terms of Use.
+You agree not to sell, resell, reproduce, duplicate, copy or use for any commercial purposes any portion of this site, or use of or access to this site.
+In addition to any excuse provided by applicable law, we shall be excused from liability for non-delivery or delay in delivery of products and services available through our site arising from any event beyond our reasonable control, whether or not foreseeable by either party, including but not limited to, labor disturbance, war, fire, accident, adverse weather, inability to secure transportation, governmental act or regulation, and other causes or events beyond our reasonable control, whether or not similar to those which are enumerated above.
+If any part of these Terms of Use is held invalid or unenforceable, that portion shall be construed in a manner consistent with applicable law to reflect, as nearly as possible, the original intentions of the parties, and the remaining portions shall remain in full force and effect.
+Any failure by us to enforce or exercise any provision of these Terms of Use or related rights shall not constitute a waiver of that right or provision.
+20. Additional Information
+LION Mobile LLC does not condone or support binge/excessive drinking. LION Mobile LLC is not responsible for any activities that are the direct or indirect consequences of drinking alcohol and/or using this service. Please drink and use unWine responsibly.
+21. Contact Information
+Except as explicitly noted on this site, the services available through this site are offered by unWine located at 5511 Pecan Springs Rd Apt 3301, TX 78249. If you notice that any user is violating these Terms of Use, please contact us at devon.ryan@lionmobile.co.
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RmZ-bn-iDw" secondAttribute="trailing" id="2gL-oO-YYv"/>
+                            <constraint firstItem="RmZ-bn-iDw" firstAttribute="top" secondItem="cwS-a1-brP" secondAttribute="bottom" id="jh0-AR-UJF"/>
+                            <constraint firstItem="RmZ-bn-iDw" firstAttribute="leading" secondItem="K01-9T-hAa" secondAttribute="leading" id="xQC-sE-RgA"/>
+                            <constraint firstItem="qmw-7j-A21" firstAttribute="top" secondItem="RmZ-bn-iDw" secondAttribute="bottom" id="xRk-Mh-EK8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YYD-Xa-YZy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6l-fH-5eU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="1899"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="aBk-eN-9Cb">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KDQ-Pf-Ohu" customClass="customTabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" itemSpacing="20" id="CQD-md-eM1">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oeC-lQ-PpJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144" y="456"/>
+        </scene>
+        <!--Registration Form Controller-->
+        <scene sceneID="yMp-GQ-jRH">
+            <objects>
+                <viewController storyboardIdentifier="regform" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VMq-HX-QP7" customClass="RegistrationFormController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lyI-DL-bWY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nuw-9l-Xsw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GlM-im-xgH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qTK-Pc-0bO">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Zv4-Nx-Bzn"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCx-Ci-2SV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-576" y="2378"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FHM-p6-05q">
+            <objects>
+                <navigationController storyboardIdentifier="MainNew" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8VF-gV-3HE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cFF-Sm-g2l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qrz-7Z-UYe" kind="relationship" relationship="rootViewController" id="wAF-12-6No"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dq-9s-2hD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1388" y="1539"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="10.png" width="15" height="15"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="s4v-W3-e11"/>
+    </inferredMetricsTieBreakers>
+</document>

@@ -1,0 +1,3 @@
+* Bug fixes and improvements
+
+Do you have feedback or a feature request? Let us know by sending us a message to feedback@lionmobile.co

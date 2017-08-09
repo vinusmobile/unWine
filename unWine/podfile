@@ -1,0 +1,99 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+workspace 'unWine'
+project 'unWine.xcodeproj'
+platform :ios, '9.3'
+
+target 'unWine' do
+    use_frameworks!
+    
+    # Backend
+    pod 'Parse', '~> 1.14.2'
+
+    pod 'ParseFacebookUtilsV4'#, '1.11.1'
+    pod 'ParseTwitterUtils'#, '1.10.0'
+    #pod 'FBSDKCoreKit', '4.20.1'
+    #pod 'FBSDKLoginKit', '4.20.1'
+    pod 'FBSDKShareKit', '4.20.1'
+
+    # Utilities
+    pod 'AFNetworking', '2.6.3'
+    pod 'iRate', '1.11.7'
+    pod 'NSDate-Time-Ago', '1.0.1'
+    pod 'IQKeyboardManager', '4.0.1'
+    pod 'GPUImage', '0.1.7'
+    pod 'CloudSight', '1.0.4'
+    pod 'RegExCategories'
+    pod 'SwiftyBeaver', '1.2.0'
+    pod 'APAddressBook', '0.3.1'
+
+    # Analytics
+    pod 'Fabric', '1.6.11' # required
+    pod 'Crashlytics', '3.8.4'
+    pod 'TwitterKit', '2.8.1'
+    pod 'TwitterCore', '2.8.0'
+    pod 'uservoice-iphone-sdk', '3.2.9'
+    pod 'Appboy-iOS-SDK', '2.27.0'
+    pod 'Flurry-iOS-SDK', '7.10.0'
+    pod 'Branch'
+    pod 'Intercom'
+
+    # UI Elements
+    pod 'ParseUI', '1.2.0'
+    pod 'MBProgressHUD', '1.0.0'
+    pod 'NJKWebViewProgress', '0.2.3'
+    pod 'TTTAttributedLabel', '1.13.4'
+    pod 'TGCameraViewController', '2.2.8'
+    #pod 'FXForms'
+    #pod 'NUI'
+    pod 'MarqueeLabel', '2.7.1'
+    pod 'CustomIOSAlertView', '0.9.5'
+    pod 'UIBarButtonItem-Badge', :git => 'https://github.com/mikeMTOL/UIBarButtonItem-Badge'
+    pod 'GCPlaceholderTextView', '1.0.1'
+    pod 'PHFComposeBarView', '2.1.0'
+    pod 'CRToast', '0.0.9'
+    #pod 'QMBParallaxScrollViewController'
+    #pod 'PEPhotoCropEditor'
+    pod 'ActionSheetPicker-3.0', '2.2.0'
+    #pod 'AMSlideMenu', '~> 1.5.4'
+    #pod 'iOS-Slide-Menu'
+    #pod 'Onboard'
+    #pod 'JazzHands'
+    pod 'Charts', :git => 'https://github.com/danielgindi/Charts.git', :branch => 'master'
+    pod 'Koloda', '~> 4.0'
+    #pod 'Koloda', :git => 'https://github.com/Yalantis/Koloda.git', :branch => 'objective-c_support'
+    #pod 'Neon'
+    pod 'PKHUD', '4.2.2'
+    #pod 'JSSAlertView'
+    #pod 'SVGKit'
+
+    # Location stuff
+    pod 'GooglePlaces'
+    pod 'GooglePlacePicker'
+    pod 'GoogleMaps'
+    
+    # Speeds up app
+    pod 'Neumob', '3.3.0.1'
+
+    #pod 'UITextFieldWithLimit'
+    #pod 'MHTextField', '~> 0.5'
+    # pod 'UITextField+Shake', '~> 1.1'
+    # https://github.com/EddyBorja/MLPAutoCompleteTextField
+
+end
+
+# This is the fix for SDKS with apparently unvalid architectures
+# As seen on https://github.com/Appboy/appboy-ios-sdk/issues/26 towards the end
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            if target.name == "Appboy-iOS-SDK"
+                config.build_settings["OTHER_LDFLAGS"] = '$(inherited) "-ObjC"'
+            end
+            if target.name == "Flurry-iOS-SDK"
+                config.build_settings["OTHER_LDFLAGS"] = '$(inherited) "-ObjC"'
+            end
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
+    end
+end

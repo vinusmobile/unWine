@@ -1,0 +1,97 @@
+ENV["SLACK_URL"] ||= "https://hooks.slack.com/services/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"
+fastlane_version "2.44.1"
+
+default_platform :ios
+
+platform :ios do
+  #
+  # Learn more here: https://github.com/fastlane/setups/blob/master/samples-ios/distribute-beta-build.md 🚀
+  #
+  lane :beta do |values|
+    # Fabric generated this lane for deployment to Crashlytics Beta
+    # set 'export_method' to 'ad-hoc' if your Crashlytics Beta distribution uses ad-hoc provisioning
+    match(type: "adhoc", force_for_new_devices: true, username:”charlesfok@outlook.com”)
+    gym(scheme: 'unWine', export_method: 'ad-hoc')
+
+    emails = values[:test_email] ? values[:test_email] : ['fabiongo123@hotmail.com']#, 'devon.ryan@live.com']#, 'aileenalmazora@gmail.com'] # You can list more emails here
+    groups = values[:test_email] ? nil : nil # You can define groups on the web and reference them here
+
+    crashlytics(api_token: '2f47d43cb83bea5d5790d2249e7266ee1958bbab',
+             build_secret: 'ad76ba9f9764892f5091b47637957344206ca541a71014331e349af0ec24b6d5',
+                   emails: emails,
+                   groups: groups,
+                    notes: 'Distributed with fastlane', # Check out the changelog_from_git_commits action
+            notifications: true) # Should this distribution notify your testers via email?
+
+    # for all available options run `fastlane action crashlytics`
+
+    # You can notify your team in chat that a beta build has been uploaded
+    slack(
+      slack_url: "https://hooks.slack.com/services/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",
+      channel: "unwine-beta-releases",
+      message: "Successfully uploaded a beta release - see it at https://fabric.io/_/beta"
+    )
+  end
+
+  #lane :register do |values|
+  #  register_device(
+  #    name: "Aileen - iPhone 6",
+  #    udid: "1d21e0a860e2c1bd2beff4e8293aea889b12eead"
+  #  ) # Simply provide the name and udid of the device
+  #  match(type: "development", force_for_new_devices: true)
+  #  match(type: "adhoc", force_for_new_devices: true)
+  #end
+
+
+  #desc "Take screenshots"
+  #lane :screenshot do
+  #  snapshot
+  #end
+
+  #desc "Create ipa"
+  #lane :build do
+  #  increment_build_number
+  #  gym
+  #end
+
+  desc "Upload to App Store and submit for review"
+  lane :upload do
+    deliver(
+      submit_for_review: true,
+    )
+  end
+
+  desc "Provision, take screenshots, build and upload to App Store"
+  lane :do_everything do
+    #provision
+    #screenshot
+    match(type: "appstore")
+    #build
+    gym(scheme: 'unWine', export_method: 'app-store')
+    upload
+  end
+end
+
+
+after_all do |lane|
+  # This block is called, only if the executed lane was successful
+  if ENV["SLACK_URL"]
+    slack(
+      message: nil,
+      success: true,
+      default_payloads: [:test_result, :git_branch]
+    )
+  end
+
+  clean_build_artifacts
+end
+
+
+error do |lane, exception|
+  if ENV["SLACK_URL"]
+    slack(
+      message: exception.to_s,
+      success: false
+    )
+  end
+end

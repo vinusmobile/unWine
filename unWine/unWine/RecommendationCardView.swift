@@ -1,0 +1,23 @@
+//
+//  RecommendationCardView.swift
+//  unWine
+//
+//  Created by Fabio Gomez on 5/11/17.
+//  Copyright © 2017 LION Mobile. All rights reserved.
+//
+
+import UIKit
+
+class RecommendationCardView: UIView {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+    
+    
+
+}

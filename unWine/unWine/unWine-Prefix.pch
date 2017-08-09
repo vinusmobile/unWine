@@ -1,0 +1,311 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "CascadingLabelView.h"
+#import "Analytics.h"
+#import "Analytics_Events.h"
+#import "Analytics_Errors.h"
+#import "customTabBarController.h"
+#import "MBProgressHUD.h"
+#import "unWineAppDelegate.h"
+#import "unWineAlertView.h"
+//#import <ErrorKit/ErrorKit_Parse.h>
+#import "unWineError.h"
+#import "ThemeHandler.h"
+#endif
+
+#define LOGGER(arg) NSLog(@"%s - %@", __PRETTY_FUNCTION__, (arg))
+
+#define UNWINE_APP_ID_PRODUCTION            @"wa6ntcTk5msrS1u6sNb009m2iEqM8ETcjgANoktj"
+#define UNWINE_APP_CLIENT_KEY_PRODUCTION    @"xmy7VgshmjNz5AyxWogmimxq8buFekCVofAGESfJ"
+
+#define UNWINE_APP_ID_DEVELOPMENT           @"atPw27IbtqD4EdHRhRSJsPpXxvXIeWEBAnc8EWjs"
+#define UNWINE_APP_CLIENT_KEY_DEVELOPMENT   @"2tJv3s65M52Tu9hbUVWqIDfXa0szWj3o04jQLoeH"
+
+#define TWITTER_CONSUMER_KEY                @"PkjrpPV43BtiaoclFYlmlQYzN" // Twitter
+#define TWITTER_CONSUMER_SECRET             @"uq9xfOmM42LtF73H2fK8PUjMO4bVQnxWrmNAQoWWCcUiFcpCcZ" // Twitter
+//#define TWITTER_CONSUMER_KEY                @"Hl3plI5dbQjntRMagwgL34Dpe" // Fabric
+//#define TWITTER_CONSUMER_SECRET             @"BR3XOreJ7UZs0RChcuupfWerZql0BbUTq3RYfZogc4qBEBr8Wj" // Fabric
+
+#define FLURRY_KEY_PRODUCTION               @"34NJXZX4ZR4YHZ9JB66G"
+#define FLURRY_KEY_DEVELOPMENT              @"XB8BXFKKG2H32RGBF8N3"
+
+#define APP_BOY_API_KEY_PRODUCTION          @"4955353b-bf9d-4365-9f1a-4a7b1878d197"
+#define APP_BOY_API_KEY_DEVELOPMENT         @"54b1b922-6b91-41d0-be1e-10ea40476a6b"
+
+#define GOOGLE_MAPS_API_KEY                 @"AIzaSyAHb2AKz-Z9Tn0klDS-N1l6CJzb917DUkM"
+
+// Makes the app go faster
+#define NEUMOB_KEY_PRODUCTION               @"sdUxtdmJvTQLW8xj"
+#define NEUMOB_KEY_DEVELOPMENT              @"TuCnZHiu5hFpEHgv"
+
+// Intercom.io
+#define INTERCOM_API_KEY_PRODUCTION         @"ios_sdk-d313499187271028e1ebae34ab2e3e7535b9fcfe"
+#define INTERCOM_API_KEY_DEVELOPMENT        @"ios_sdk-bf4fc8a4dbb91bd7f3db0dfac7dd33f1c2387c36"
+
+#define INTERCOM_APP_ID_PRODUCTION          @"qxqojdus"
+#define INTERCOM_APP_ID_DEVELOPMENT         @"p37grzn7"
+
+// Cloudsight, for scanning wines
+#define CLOUDSIGHT_KEY                      @"I_nOO19mQ8wC5vq5pU_i6g"
+#define CLOUDSIGHT_SECRET                   @"iW-FZapDwz8vuIoTAOOKGw"
+
+#define FEEDBACK_IDENTIFIER                 @"feedback"
+
+//#define MAKE_STATUS_BAR_WHITE               [[UIApplication sharedApplication] setStatusBarStyle:UIBarStyleBlack]
+#define MAKE_STATUS_BAR_WHITE               self.navigationController.navigationBar.barStyle = UIBarStyleBlack
+#define GET_APP_DELEGATE                    (unWineAppDelegate *)[[UIApplication sharedApplication] delegate]
+
+#define UNWINE_LOGO_IMAGE                   [UIImage imageNamed:@"unWineLogo.png"]
+#define UNWINE_FONT_TEXT                    [UIFont fontWithName:@"OpenSans" size:24]
+#define UNWINE_FONT_TEXT_SMALL              [UIFont fontWithName:@"OpenSans" size:20]
+#define UNWINE_FONT_TEXT_XSMALL             [UIFont fontWithName:@"OpenSans" size:17]
+
+#define FACEBOOK_COLOR                      [UIColor colorWithRed:0.267 green:0.51 blue:0.733 alpha:1]
+#define UNWINE_ORANGE_COLOR                 [UIColor colorWithRed:0.91 green:0.631 blue:0.188 alpha:1]
+
+#define CIRCLE(image)   image.layer.cornerRadius = image.frame.size.height / 2; \
+                        image.layer.masksToBounds = YES; \
+                        image.layer.borderWidth = .2f; \
+                        image.layer.borderColor = [[UIColor blackColor] CGColor]; \
+                        image.contentMode = UIViewContentModeScaleAspectFill
+
+#define GREEN_BUTTON(button)   [button setTitleColor:UNWINE_WHITE forState:UIControlStateNormal]; \
+                                button.backgroundColor = UNWINE_GREEN_NEW; \
+                                button.layer.borderColor = UNWINE_GREEN_NEW.CGColor; \
+                                button.layer.borderWidth = 0.5f; \
+                                button.layer.cornerRadius = 3.f
+
+//button.titleLabel.textColor = UNWINE_GRAY_LIGHT;
+#define GRAY_BUTTON(button)    [button setTitleColor:UNWINE_GRAY_LIGHT forState:UIControlStateNormal]; \
+                                button.backgroundColor = [UIColor clearColor]; \
+                                button.layer.borderColor = UNWINE_GRAY_LIGHT.CGColor; \
+                                button.layer.borderWidth = 0.5f; \
+                                button.layer.cornerRadius = 3.f
+
+
+#define NEWSFEED_TAB_INDEX 0
+#define INBOX_TAB_INDEX 0
+#define PROFILE_TAB_INDEX 2
+
+#define frameSpeed 5.0f/60.0f
+#define RATINGMIN 0
+#define RATINGMAX 10
+#define RATINGSCALE 10
+#define RATINGRATE .5
+
+#define SCREENWIDTH WIDTH2([[UIScreen mainScreen] bounds])
+#define SCREENHEIGHT HEIGHT2([[UIScreen mainScreen] bounds])
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define IS_ZOOMED (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+#define IS_IPHONE_4 (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+#define IPHONE_6P_WIDTH 414
+#define IPHONE_6_WIDTH 375
+#define IPHONE_5_WIDTH 320
+#define IPHONE_4_WIDTH 320
+
+#define IPHONE_6P_HEIGHT 736
+#define IPHONE_6_HEIGHT 667
+#define IPHONE_5_HEIGHT 568
+#define IPHONE_4_HEIGHT 568
+
+#define X(view) view.frame.position.x
+#define Y(view) view.frame.position.y
+#define X2(view) view.frame.origin.x
+#define Y2(view) view.frame.origin.y
+#define X3(view) view.origin.x
+#define Y3(view) view.origin.y
+#define WIDTH(view) view.frame.size.width
+#define HEIGHT(view) view.frame.size.height
+#define WIDTH2(view) view.size.width
+#define HEIGHT2(view) view.size.height
+#define SEMIWIDTH(view) view.frame.size.width / 2
+#define SEMIHEIGHT(view) view.frame.size.height / 2
+#define SEMIWIDTH2(view) view.size.width / 2
+#define SEMIHEIGHT2(view) view.size.height / 2
+
+#define IMAGE_MEMORY_SIZE(image) UIImageJPEGRepresentation(image, 1).length // In bytes
+
+#define kBorderWidth 3.0
+#define kCornerRadius 8.0
+#define borderBuffer 8.0
+
+#define STATUS_BAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
+#define NAVIGATION_BAR_HEIGHT self.navigationController.navigationBar.frame.size.height
+
+#define UNWINE_TITLE_IMAGE [UIImage imageNamed: @"unwinewhitelogo22.png"]
+#define UNWINE_TITLE_VIEW [[UIImageView alloc] initWithImage: UNWINE_TITLE_IMAGE]
+
+#define UNWINE_RED          [UIColor colorWithRed:171.0/255 green:17.0/255 blue:36.0/255 alpha:1.0] // HEX #ab1124
+#define UNWINE_RED_80       [UIColor colorWithRed:171.0/255 green:17.0/255 blue:36.0/255 alpha:0.8]
+#define UNWINE_RED_70       [UIColor colorWithRed:171.0/255 green:17.0/255 blue:36.0/255 alpha:0.7]
+#define UNWINE_RED_LIGHT    [UIColor colorWithRed:171.0/255 green:17.0/255 blue:36.0/255 alpha:0.5]
+#define UNWINE_GRAY         [UIColor colorWithRed:27.0/255 green:27.0/255 blue:27.0/255 alpha:1.0]
+#define UNWINE_GRAY_DARK    [UIColor colorWithRed:55.0/255 green:55.0/255 blue:55.0/255 alpha:1.0]
+#define UNWINE_GRAY_LIGHT   [UIColor colorWithRed:71.0/255 green:71.0/255 blue:71.0/255 alpha:1.0]
+#define UNWINE_GREEN        [UIColor colorWithRed:0.0/255 green:170.0/255 blue:0.0/255 alpha:1.0]
+#define IMAGE_BORDER_COLOR  [UIColor colorWithRed:43.0/255 green:90.0/255 blue:131.0/255 alpha:0.4]
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+                green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+                blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+                alpha:1.0]
+
+#define UNWINE_WHITE        UIColorFromRGB(0xFFFCFA)
+#define UNWINE_WHITE_BACK   UIColorFromRGB(0xFFFBF8)
+#define UNWINE_BLACK        UIColorFromRGB(0x333333)
+#define UNWINE_PURPLE       UIColorFromRGB(0x80253E)
+#define UNWINE_RED_NEW      UIColorFromRGB(0x9C2C31)
+#define UNWINE_GREEN_NEW    UIColorFromRGB(0x61B24E)
+
+
+#define ISVALIDOBJECT(obj)  (obj != nil)
+#define ISVALID(string)     (string != nil && ![string isEqualToString: @""] && ![string isEqualToString: @"none"])
+#define ISVALIDARRAY(array) (array != nil && array.count > 0)
+
+#define DOES_NOT_HAVE_UNWINE_SCHEME(urlString) ([urlString rangeOfString:@"unwineapp"].location == NSNotFound)
+
+#define WINE_PLACEHOLDER [UIImage imageNamed:@"placeholder2.png"]
+#define VINECAST_PLACEHOLDER [UIImage imageNamed:@"placeholder2.png"]
+#define USER_PLACEHOLDER [UIImage imageNamed:@"defaultProfileImage.png"]
+#define MERIT_PLACEHOLDER [UIImage imageNamed:@"default.png"]
+
+// Facebook Stuff
+#define INVITE_FRIENDS_URL          @"https://fb.me/419600994911318"
+#define FACEBOOK_PERMISSIONS        @[@"user_friends", @"public_profile", @"email"]
+
+#define INVITE_DEFAULTS @"contactInvites"
+#define INVITE_ALL_UNWINE_USERS @"invitedAllUnWineUsers"
+
+// Venue Stuff
+#define FOURSQUARE_CLIENT_ID @"LVY4VRQMKKM5OIOOPL5JW3PBBHO0MUBMASGO2C0HNJKLFNLN"
+#define FOURSQUARE_CLIENT_SECRET @"XGLM0J5131NOIDOJAULWNEYEBILYVHMBYXFBOOEJNQBIV5ZX"
+
+#define GET_UNWINE_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+#define UNWINE_FEEDBACK_URL [NSURL URLWithString: @"unwineapp://feedback"]
+#define UNWINE_SIGNUP_URL [NSURL URLWithString: @"unwineapp://guestsignup"]
+#define UNWINE_PARTNER_URL(some) [NSURL URLWithString:[NSString stringWithFormat:@"unwineapp://partner/%@", some]]
+
+#define IOS_8_OR_MAJOR (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+#define FUNCTION_NAME __PRETTY_FUNCTION__
+#define FACEBOOK_IS_INSTALLED [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb://"]]
+#define DISMISS_VIEW [self.navigationController popViewControllerAnimated:YES]
+#define GET_TAB_BAR ((customTabBarController *)self.tabBarController)
+#define SHOW_HUD [MBProgressHUD showHUDAddedTo:self.view animated:YES]
+#define HIDE_HUD dispatch_async(dispatch_get_main_queue(), ^{\
+[MBProgressHUD hideHUDForView:self.view animated:YES];\
+})
+#define SHOW_HUD_FOR_VIEW(view) [MBProgressHUD showHUDAddedTo:view animated:YES]
+#define HIDE_HUD_FOR_VIEW(view) dispatch_async(dispatch_get_main_queue(), ^{\
+[MBProgressHUD hideHUDForView:view animated:YES];\
+})
+#define SHOW_HUD_FOR_VC(vc) [MBProgressHUD showHUDAddedTo:vc.view animated:YES]
+#define HIDE_HUD_FOR_VC(vc) dispatch_async(dispatch_get_main_queue(), ^{\
+[MBProgressHUD hideHUDForView:vc.view animated:YES];\
+})
+#define HIDE_ALL_HUDS dispatch_async(dispatch_get_main_queue(), ^{\
+while ([MBProgressHUD hideHUDForView:self.view animated:YES]) {\
+    LOGGER(@"Hiding All HUDs");\
+}\
+})\
+
+#define TABLE_VIEW_SCROLL_TO_TOP [self.tableView setContentOffset:CGPointMake(0, 0 - self.tableView.contentInset.top) animated:YES]
+
+#define GRAPE_NUT_LIMIT     1
+#define LUSH_LIMIT          15
+#define WINO_LIMIT          45
+#define CONNOISSEUR_LIMIT   85
+#define AFICIONADO_LIMIT    125
+#define COGNOSCENTI_LIMIT   165
+#define SAVANT_LIMIT        205
+#define BON_VIVANT_LIMIT    285
+#define OENOPHILE_LIMIT     325
+#define MAESTRO_LIMIT       500
+
+#define DONT_REFRESH_NEWSFEED 0
+#define REFRESH_NEWSFEED 1
+#define MOVE_TO_CHECKIN 2
+#define GAME_VIEW 5
+
+#define SHOW_SETTINGS_TAG 4135093
+
+#define IMAGE_PER_CELL 3
+
+#define TIME_STAMP [[NSDate date] timeIntervalSince1970] * 1000
+
+
+// Wine Stuff
+#define CONTAINS_PARSE_URL(Object)
+#define USER_CLASS              @"_User"
+#define UNWINE_CLASS            @"unWine"
+#define UNWINE_PENDING_CLASS    @"unwinePending"
+#define NEWSFEED_CLASS          @"NewsFeed"
+#define GRAPES_CLASS            @"Grapes"
+
+// Images
+#define G_CHECKMARK_IMAGE [UIImage imageNamed:@"37x-Checkmark.png"]
+
+
+// Email formatter
+#define ALPHA                   @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+#define NUMERIC                 @"1234567890"
+#define ALPHA_NUMERIC           ALPHA NUMERIC
+
+// Phone Number
+#define PHONE_CHARACTERS        @"+1234567890"
+
+#define AMSlideMenuWithoutStoryboards
+
+
+// To get old shit to compile
+#define headerHeightO2       24.
+
+// IAP Constants
+#define IAP_PHOTO_FILTERS @"com.LionMobile.unWine.PhotoFilters"
+
+// System
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+// Social stuff
+#define SHARE_FACEBOOK @"Share on Facebook"
+#define SHARE_TEXT @"Share on Text"
+#define SHARE_EMAIL @"Share on Email"
+
+// Get Facebook Image
+#define FB_GET_PHOTO_CONTENT_FROM_SHARER(sharer) ((FBSDKSharePhotoContent *)sharer.shareContent).photos[0]
+
+
+static NSString *const PFProductMetadataPriceKey = @"price";
+static NSString *const PFProductMetadataPriceLocaleKey = @"priceLocale";
+static NSString *const PFProductMetadataPriceFormattedKey = @"priceFormatted";
+

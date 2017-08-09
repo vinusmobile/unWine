@@ -1,0 +1,4 @@
+app_identifier "com.LionMobile.unWine" # The bundle identifier of your app
+apple_id "lionapps@live.com" # Your Apple email address
+
+team_id "GNZUE69266"  # Developer Portal Team ID

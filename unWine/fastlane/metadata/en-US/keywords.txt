@@ -1,0 +1,1 @@
+cellar,bottle,drink,bodega,untappd,alcohol,scanner,uncorked,pub,whiskey,distiller,vodka,cork,guest

@@ -1,0 +1,6 @@
+framework module GCPlaceholderTextView {
+  umbrella header "GCPlaceholderTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}
